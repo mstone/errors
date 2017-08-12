@@ -25,6 +25,9 @@ func init() {
 		// github.com/juju/errors/path.go
 		size := len(file)
 		suffix := len("github.com/juju/errors/path.go")
+		if size <= suffix {
+			return 
+		} 
 		goPath = file[:size-suffix]
 		prefixSize = len(goPath)
 	}
